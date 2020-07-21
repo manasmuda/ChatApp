@@ -36,7 +36,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatViewHolder> {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View contactView = inflater.inflate(R.layout.chat_item, parent, false);
-        return new ChatViewHolder(contactView);
+        return new ChatViewHolder(contactView,mContext);
     }
 
     @Override
