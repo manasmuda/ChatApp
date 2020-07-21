@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:id="@+id/chat_image"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chat_name"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="7dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/chat_image"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:text="MANAS"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chat_lmsg"
+        android:textSize="16dp"
+        android:text="Hello"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="9dp"
+        android:layout_below="@id/chat_name"
+        android:layout_toRightOf="@id/chat_image"/>
+
+    <TextView
+        android:id="@+id/chat_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="12dp"
+        android:text="12:00"
+        android:textSize="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/chat_image"
+        android:background="#000000"></LinearLayout>
+
+</RelativeLayout>
