@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.msm.chatapp.CallBacks.OnChatClick;
 import com.msm.chatapp.DataModels.ChatModel;
 import com.msm.chatapp.R;
-import com.msm.chatapp.ViewHolders.CallViewHolder;
 import com.msm.chatapp.ViewHolders.ChatViewHolder;
 
 import java.util.ArrayList;
@@ -22,12 +22,14 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     private List<ChatModel> queryList;
     private Context mContext;
     private String query;
+    private OnChatClick onChatClick;
 
     public ChatsAdapter(Context context){
         mContext=context;
         query="";
         chatModelList=new ArrayList<>();
         queryList=new ArrayList<>();
+
     }
 
     @NonNull
@@ -41,7 +43,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
-        holder.bindView(queryList.get(position));
+        holder.bindView(queryList.get(position),onChatClick);
     }
 
     @Override
@@ -78,6 +80,10 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     public int getSize(){
         return chatModelList.size();
+    }
+
+    public void setListener(OnChatClick onChatClick){
+        this.onChatClick=onChatClick;
     }
 
 }

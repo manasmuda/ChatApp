@@ -1,8 +1,9 @@
 package com.msm.chatapp.DataModels;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class MessageModel {
+public class MessageModel implements Serializable {
 
     private String msg;
     private boolean myMsg;

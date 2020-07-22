@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:id="@+id/otherlayout">
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="HI"
+            android:textSize="20dp"
+            android:maxWidth="250dp"
+            android:id="@+id/othermsg"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/othermsgtime"
+            android:textSize="14dp"
+            android:text="12:00"
+            android:layout_marginLeft="14dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CC00BCD4"
+        android:orientation="horizontal"
+        android:id="@+id/mylayout"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/mymsgtime"
+            android:textSize="14dp"
+            android:text="12:00"
+            android:layout_marginRight="15dp" />
+
+        <TextView
+            android:layout_marginRight="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="HI"
+            android:textSize="20dp"
+            android:maxWidth="250dp"
+            android:id="@+id/mymsg"
+            android:textColor="#000000" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

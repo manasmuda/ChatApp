@@ -1,9 +1,10 @@
 package com.msm.chatapp.DataModels;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatModel {
+public class ChatModel implements Serializable {
 
     private String name;
     private String id;

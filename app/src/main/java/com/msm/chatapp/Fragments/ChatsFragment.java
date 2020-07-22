@@ -2,6 +2,7 @@ package com.msm.chatapp.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -15,9 +16,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.msm.chatapp.Activities.ChatActivity;
 import com.msm.chatapp.Adapters.ChatsAdapter;
 import com.msm.chatapp.CallBacks.LoadingCallBack;
+import com.msm.chatapp.CallBacks.OnChatClick;
 import com.msm.chatapp.DataBase.ChatDB;
+import com.msm.chatapp.DataModels.ChatModel;
 import com.msm.chatapp.R;
 
 public class ChatsFragment extends Fragment {
@@ -57,7 +61,7 @@ public class ChatsFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.chats_fragment,container,false);
         chatList=view.findViewById(R.id.chat_list);
 
@@ -68,6 +72,15 @@ public class ChatsFragment extends Fragment {
         chatList.setAdapter(chatsAdapter);
 
         chatsAdapter.setChatModelList(ChatDB.getPage(chatsAdapter.getSize()));
+
+        chatsAdapter.setListener(new OnChatClick() {
+            @Override
+            public void onClick(ChatModel chatModel) {
+                Intent intent=new Intent(mContext, ChatActivity.class);
+                intent.putExtra("chat",chatModel);
+                activity.startActivity(intent);
+            }
+        });
 
         chatList.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
